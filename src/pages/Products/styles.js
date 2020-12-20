@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { darken } from 'polished';
-import { black, blue, gray, gray_secondary, white } from '../../styles/colors';
+import { black, blue, gray, gray_secondary, green_first, green_secondary, white } from '../../styles/colors';
 
 export const Content = styled.div`
   max-width: 580px;
@@ -10,6 +10,7 @@ export const Content = styled.div`
   box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.1);
   background-color: ${white};
   padding-bottom: 25px;
+  min-height: 700px;
 
   @media (max-width: 500px) {
     margin: auto;
@@ -74,26 +75,28 @@ export const ProductItem = styled.div`
 `;
 
 export const TotalBuyContainer = styled.div`
-  margin: 25px 0px 30px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-top: 2px solid ${gray};
-  border-bottom: 2px solid ${gray};
-  font-family: 'Poppins', sans-serif;
-  padding: 35px 30px;
+  > div:nth-child(1) {
+    margin: 25px 0px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 2px solid ${gray};
+    font-family: 'Poppins', sans-serif;
+    padding: 35px 30px;
 
-  > strong {
-    font-size: 26px;
-    color: ${black};
+    > strong {
+      font-size: 26px;
+      color: ${black};
+    }
   }
+
+  border-bottom: 2px solid ${gray};
 `;  
 
 export const Button = styled.button`
   background: ${blue};
   font-size: 26px;
   font-weight: bold;
-  font-family: 'Poppins', sans-serif;
   font-family: 'Poppins', sans-serif;
   display: flex;
   align-items: center;
@@ -102,7 +105,7 @@ export const Button = styled.button`
   outline: none;
   border: 0;
   width: 90%;
-  margin: 0px auto;
+  margin: 30px auto 0px;
   border-radius: 10px;
   padding: 20px 10px;
   cursor: pointer;
@@ -111,4 +114,58 @@ export const Button = styled.button`
   &:hover {
     background-color: ${darken(0.1, blue)};
   }
+`;
+
+export const FreeShippingMessage = styled.strong`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Poppins', sans-serif;
+  font-size: 20px;
+  padding-bottom: 40px;
+
+  > strong {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 460px;
+    background-color: ${green_secondary};
+    color: ${green_first};
+    min-height: 48px;
+    padding: 4px 20px;
+    margin: 0 auto;
+    border-radius: 20px;
+  }
+`;
+
+export const ChangeViewProductsOption = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 16px;
+
+  > button {
+    background: ${blue};
+    border: 1px solid ${blue};
+    outline: none;
+    color: ${white};
+    font-weight: bold;
+    padding: 10px;
+    font-family: 'Poppins', sans-serif;
+    border-radius: 8px;
+
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+
+    &:hover {
+      background-color: ${darken(0.1, blue)};
+    }
+  }
+`;
+
+export const ContainerLoader = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
 `;
